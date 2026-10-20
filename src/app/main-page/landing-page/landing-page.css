@@ -1,0 +1,182 @@
+/* body {
+    background: #f4f1ec;
+} */
+
+.landing-page {
+  display: flex;
+  gap: 2%;
+  padding: 0 10%;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+}
+
+.simple-about-left,
+.simple-about-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about,
+.project,
+.tech-stacks,
+.picture {
+  background-color: #f5f3f4;
+  border-radius: 30px;
+  padding: 24px 32px;
+  min-width: 0;
+}
+
+.tech-stacks {
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+.frame,
+.frame-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+}
+
+.frame::-webkit-scrollbar,
+.frame-2::-webkit-scrollbar {
+    display: none;
+}
+
+.frame.dragging,
+.frame-2.dragging {
+    cursor: grabbing;
+}
+
+.frame img,
+.frame-2 img {
+    -webkit-user-drag: none;
+}
+
+.picture {
+    overflow: hidden;
+}
+
+.img-border {
+  background-color: white;
+  width: 60px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  flex: 0 0 auto;
+}
+
+.img-border img {
+  width: 60px;
+  height: auto;
+}
+
+.img-border-2 {
+    flex: 0 0 auto;
+    width: 360px;
+    height: 240px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.img-border-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.card-title,
+.name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.music {
+    background-color: #f5f3f4;
+    border-radius: 30px;
+    padding: 24px 32px;
+    min-width: 0;
+}
+
+.music iframe {
+    border-radius: 15px;
+    border: 0;
+}
+
+.project-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.project-card {
+  background-color: #f5f3f4;
+  border-radius: 30px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 50%;
+}
+
+/* .project-card:hover {
+  transform: translateY(-4px);
+} */
+
+/* Container */
+.logo-container {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Shared styles */
+.logo-img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo - visible by default */
+.logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Word - completely hidden from the right side */
+.word {
+  opacity: 1; /* keep full opacity */
+  clip-path: inset(0 100% 0 0); /* fully clipped from the right */
+}
+
+/* ========== HOVER ========== */
+.project-card:hover .logo {
+  opacity: 0;
+  transform: scale(0.85);
+  transition-delay: 0s;
+}
+
+/* Word reveals continuously from left → right */
+.project-card:hover .word {
+  clip-path: inset(0 0 0 0); /* fully revealed */
+}

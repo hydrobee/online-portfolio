@@ -1,0 +1,24 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+</head>
+<body>
+  <div class="menu-pill">
+    <a
+      class="home"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <p>Home</p>
+    </a>
+    <a class="about" routerLink="/About" routerLinkActive="active">
+      <p>About</p>
+    </a>
+    <a class="project" routerLink="/Project" routerLinkActive="active">
+      <p>Project</p>
+    </a>
+    <a class="contact" routerLink="/Contact" routerLinkActive="active">
+      <p>Contact</p>
+    </a>
+  </div>
+</body>
