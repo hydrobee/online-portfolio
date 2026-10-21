@@ -2,12 +2,14 @@
     background: #f4f1ec;
 } */
 
+/* ================= PAGE LAYOUT ================= */
 .landing-page {
   display: flex;
-  gap: 2%;
-  padding: 0 10%;
+  gap: clamp(16px, 2vw, 32px); /* changed: scales with the screen */
+  padding: 0 clamp(16px, 6vw, 120px); /* changed: was 0 10% */
+  max-width: 1500px; /* new: stops it stretching too far on huge monitors */
+  margin: 50px auto; /* changed: auto centers it when max-width kicks in */
   font-family: 'Poppins', sans-serif;
-  margin-top: 50px;
 }
 
 .simple-about-left,
@@ -19,10 +21,12 @@
   gap: 20px;
 }
 
+/* ================= CARDS ================= */
 .about,
 .project,
 .tech-stacks,
-.picture {
+.picture,
+.music {
   background-color: #f5f3f4;
   border-radius: 30px;
   padding: 24px 32px;
@@ -34,34 +38,43 @@
   padding-bottom: 40px;
 }
 
+.picture {
+  overflow: hidden;
+}
+
+.card-title,
+.name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.4rem); /* changed: was 1.4rem */
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+/* ================= CAROUSELS ================= */
 .frame,
 .frame-2 {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    cursor: grab;
-    user-select: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
 }
 
 .frame::-webkit-scrollbar,
 .frame-2::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .frame.dragging,
 .frame-2.dragging {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .frame img,
 .frame-2 img {
-    -webkit-user-drag: none;
-}
-
-.picture {
-    overflow: hidden;
+  -webkit-user-drag: none;
 }
 
 .img-border {
@@ -82,78 +95,139 @@
 }
 
 .img-border-2 {
-    flex: 0 0 auto;
-    width: 360px;
-    height: 240px;
-    border-radius: 15px;
-    overflow: hidden;
+  flex: 0 0 auto;
+  width: min(360px, 75vw); /* changed: was 360px, now shrinks on phones */
+  aspect-ratio: 3 / 2; /* changed: replaces the fixed height of 240px */
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .img-border-2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.card-title,
-.name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 16px;
-}
-
-.music {
-    background-color: #f5f3f4;
-    border-radius: 30px;
-    padding: 24px 32px;
-    min-width: 0;
-}
-
+/* ================= MUSIC ================= */
 .music iframe {
-    border-radius: 15px;
-    border: 0;
+  display: block; /* new: removes the small gap under the iframe */
+  width: 100%;
+  border-radius: 15px;
+  border: 0;
 }
 
+/* ================= PROJECT CARDS ================= */
 .project-1 {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
 }
 
 .project-2 {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 50%;
+  min-width: 0;
+}
+
+.project-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 50%;
+  min-width: 0;
+}
+
+.project-card,
+.project-card-2,
+.project-card-3 {
+  box-sizing: border-box;
+  min-width: 0;
+  background-color: #f5f3f4;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* moved here from the old .project-card-2 rule */
+  gap: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card {
-  background-color: #f5f3f4;
-  border-radius: 30px;
-  padding: 24px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  width: 50%;
+  flex: 1 1 0;
+  position: relative;
+  padding: 24px 16px 68px;
+}
+
+/* ========== ARROW BUTTON ========== */
+.go {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  /* at rest: faint and NOT clickable */
+  opacity: 0.45;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.go svg {
+  transition: transform 0.3s;
+}
+
+
+/* when the whole card is hovered (or tabbed into): clickable */
+.project-card:hover .go,
+.project-card:focus-within .go {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* hovering the button itself: grows and the arrow nudges up-right */
+.project-card .go:hover {
+  transform: scale(1.1);
+}
+
+.project-card .go:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* touch screens have no hover, so keep the button usable there */
+@media (hover: none) {
+  .go {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .project-card-2 {
-  background-color: #f5f3f4;
-  border-radius: 30px;
-  padding: 24px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
   width: 100%;
+  padding: 24px 32px;
+  container-type: inline-size; /* new: lets the typewriter size itself to this card */
+  height: 100%;
 }
+
+.project-card-3 {
+  width: 100%;
+  padding: 24px 32px;
+  container-type: inline-size; /* new: lets the typewriter size itself to this card */
+  height: 100%;
+}
+
 /* .project-card:hover {
   transform: translateY(-4px);
 } */
@@ -161,7 +235,8 @@
 /* Container */
 .logo-container {
   position: relative;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -185,8 +260,8 @@
 
 /* Word - completely hidden from the right side */
 .word {
-  opacity: 1; /* keep full opacity */
-  clip-path: inset(0 100% 0 0); /* fully clipped from the right */
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
 }
 
 /* ========== HOVER ========== */
@@ -197,8 +272,95 @@
   transition-delay: 0s;
 }
 
-/* Word reveals continuously from left → right */
 .project-card:hover .word,
 .project-card-2:hover .word {
-  clip-path: inset(0 0 0 0); /* fully revealed */
+  clip-path: inset(0 0 0 0);
 }
+
+/* ================= TYPEWRITER ================= */
+.typewriter {
+  --chars: 27; /* number of characters in the text */
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: clamp(0.75rem, 3.2vw, 2rem); /* fallback for older browsers */
+  font-size: min(2rem, 5.5cqw); /* changed: always fits the card width */
+  font-weight: 500;
+  margin: 0;
+  width: calc(var(--chars) * 1ch);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ff2d20;
+  animation:
+    typing 6s steps(var(--chars)) infinite,
+    blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  0%   { width: 0; }
+  55%  { width: calc(var(--chars) * 1ch); }
+  85%  { width: calc(var(--chars) * 1ch); }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets and below: stack the two columns */
+@media (max-width: 800px) {
+  .landing-page {
+    flex-direction: column;
+    margin: 30px auto;
+  }
+}
+
+/* Phones: tighter cards, project cards stack */
+@media (max-width: 520px) {
+  .about,
+  .project,
+  .tech-stacks,
+  .picture,
+  .music {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .tech-stacks {
+    padding-bottom: 28px;
+  }
+
+  .project-1 {
+    flex-direction: column;
+  }
+
+  .project-card,
+  .project-card-2 {
+    border-radius: 24px;
+  }
+
+  .project-card-2 {
+    padding: 24px 20px;
+  }
+
+  .logo-container {
+    height: 120px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .music iframe {
+    height: 300px;
+  }
+}
+
+/* Respect "reduce motion" settings */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter {
+    animation: none;
+    border-right: 0;
+  }
+}
+

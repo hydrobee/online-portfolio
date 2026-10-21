@@ -1,41 +1,110 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  margin-top: 3rem;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
 
 .menu-pill {
+  position: relative; /* needed for the sheen */
+  isolation: isolate; /* keeps the glass layers clean */
   height: 3.5rem;
   border-radius: 50px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 0.5px solid #e2dfe0;
-  margin: 3rem auto 0;
-  width: 450px;
+  margin: 0 auto;
+  width: min(450px, calc(100% - 32px));
+  box-sizing: border-box;
+  padding: 0 4px;
+  gap: 2px;
+  margin-top: -20px;
+
+  /* Liquid Glass base – thinner & more refractive than classic frost */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px) saturate(180%) brightness(1.08) url(#liquid-refraction);
+  -webkit-backdrop-filter: blur(6px) saturate(180%) brightness(1.08);
+  /* keep the -webkit version without the url() so Safari still gets a nice frost */
+
+  /* Hairline + multi-edge specular rim (the “glass edge”) */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    /* outer depth */
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    /* top bright edge (strongest light catch) */ inset 0 1px 1px rgba(255, 255, 255, 0.65),
+    /* softer side & bottom edges */ inset 0 -1px 1px rgba(255, 255, 255, 0.25),
+    inset 1px 0 1px rgba(255, 255, 255, 0.2),
+    inset -1px 0 1px rgba(255, 255, 255, 0.2);
 }
 
+/* Glossy sheen that sits on the surface */
+.menu-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.12) 28%,
+    transparent 55%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+/* Keep the links above the sheen */
 .home,
 .about,
 .project,
 .contact {
-  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
   height: 2.95rem;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 108px;
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  font-size: clamp(0.8rem, 3.4vw, 1rem);
   font-weight: bold;
-  color: #b1a7a6;
+  color: #4a464b; /* slightly darker for better contrast on glass */
   text-decoration: none;
   transition:
     background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s,
+    transform 0.25s;
 }
 
 .home.active,
 .about.active,
 .project.active,
 .contact.active {
-  background-color: #f5f3f4;
-  color: #000000;
+  background-color: rgba(209, 208, 208, 0.55);
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #000;
 }
+
+/* Optional subtle press feedback */
+.home:active,
+.about:active,
+.project:active,
+.contact:active {
+  transform: scale(0.96);
+}
+
+
