@@ -236,6 +236,12 @@
     blink 0.8s step-end infinite;
 }
 
+/* Tools card placement */
+.tools-mobile {
+  display: none;
+  margin-top: 16px;
+}
+
 @keyframes typing {
   0% {
     width: 0;
@@ -399,6 +405,14 @@
 @media (max-width: 800px) {
   .bento {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tools-mobile {
+    display: block;
+  }
+
+  .tools-desktop {
+    display: none;
   }
 }
 

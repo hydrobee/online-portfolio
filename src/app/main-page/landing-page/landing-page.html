@@ -1,5 +1,36 @@
 <app-pill></app-pill>
 
+<!-- Tools card, defined ONCE and reused in two places below -->
+<ng-template #toolsTpl>
+  <div class="card tools">
+    <p class="card-title">Tools &amp; Frameworks</p>
+    <div class="frame" autoScroll>
+      <div class="img-border"><img src="angular.png" alt="Angular logo" title="Angular" /></div>
+      <div class="img-border"><img src="fastapi.png" alt="FastAPI logo" title="FastAPI" /></div>
+      <div class="img-border">
+        <img src="postgres.png" alt="PostgreSQL logo" title="PostgreSQL" />
+      </div>
+      <div class="img-border">
+        <img src="typescript.svg" alt="TypeScript logo" title="TypeScript" />
+      </div>
+      <div class="img-border"><img src="python.png" alt="Python logo" title="Python" /></div>
+      <div class="img-border">
+        <img src="bootstrap.svg" alt="Bootstrap logo" title="Bootstrap" />
+      </div>
+      <div class="img-border"><img src="html.png" alt="HTML5 logo" title="HTML5" /></div>
+      <div class="img-border"><img src="css.png" alt="CSS3 logo" title="CSS3" /></div>
+      <div class="img-border"><img src="vercel.png" alt="Vercel logo" title="Vercel" /></div>
+      <div class="img-border"><img src="render.png" alt="Render logo" title="Render" /></div>
+      <div class="img-border">
+        <img src="supabase.png" alt="Supabase logo" title="Supabase" />
+      </div>
+      <div class="img-border"><img src="github.png" alt="GitHub logo" title="GitHub" /></div>
+      <div class="img-border"><img src="gitlab.png" alt="GitLab logo" title="GitLab" /></div>
+      <div class="img-border"><img src="gemini.svg" alt="Gemini logo" title="Gemini" /></div>
+    </div>
+  </div>
+</ng-template>
+
 <main class="page">
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -27,9 +58,7 @@
     <div class="work-grid">
       <article class="card project-card">
         <div class="logo-container">
-          <!-- Default: logo -->
           <img src="CodeMark Logo 1.png" alt="CodeMark logo" class="logo-img logo" />
-          <!-- Hover: wordmark -->
           <img src="CodeMark Word.png" alt="CodeMark" class="logo-img word" />
         </div>
         <div class="project-meta">
@@ -44,16 +73,8 @@
             rel="noopener"
             aria-label="Open CodeMark project"
           >
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17 17 7" />
               <path d="M8 7h9v9" />
             </svg>
@@ -78,16 +99,8 @@
             rel="noopener"
             aria-label="Open Staff Directory project"
           >
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17 17 7" />
               <path d="M8 7h9v9" />
             </svg>
@@ -105,27 +118,7 @@
             <h3>Claim Form System</h3>
             <p>Internship · Sarawak Skills</p>
           </div>
-          <!-- <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open Claim Form System project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a> -->
+          <!-- add the .go link here when you have a URL -->
         </div>
       </article>
 
@@ -139,33 +132,13 @@
             <h3>Asset Inventory</h3>
             <p>Internship · Sarawak Skills</p>
           </div>
-          <!-- <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open Asset Inventory project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a> -->
+          <!-- add the .go link here when you have a URL -->
         </div>
       </article>
+
       <article class="card project-card">
         <div class="logo-container cover">
-          <img src="space-cover.png" alt="Asset Inventory logo" class="logo-img logo-space" />
-          <!-- <img src="internship project.png" alt="Asset Inventory System" class="logo-img word-space" /> -->
+          <img src="space-cover.png" alt="Space Cadets cover art" class="logo-img logo" />
         </div>
         <div class="project-meta">
           <div>
@@ -179,16 +152,8 @@
             rel="noopener"
             aria-label="Open Space Cadets Trailer"
           >
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17 17 7" />
               <path d="M8 7h9v9" />
             </svg>
@@ -201,6 +166,11 @@
         <p class="eyebrow">In progress</p>
         <p class="typewriter">Laravel project coming soon</p>
       </div>
+    </div>
+
+    <!-- MOBILE ONLY: Tools sits right below the Laravel banner -->
+    <div class="tools-mobile">
+      <ng-container [ngTemplateOutlet]="toolsTpl" />
     </div>
   </section>
 
@@ -281,36 +251,9 @@
       </div>
 
       <div class="col">
-        <div class="card">
-          <p class="card-title">Tools &amp; Frameworks</p>
-          <div class="frame" autoScroll>
-            <div class="img-border">
-              <img src="angular.png" alt="Angular logo" title="Angular" />
-            </div>
-            <div class="img-border">
-              <img src="fastapi.png" alt="FastAPI logo" title="FastAPI" />
-            </div>
-            <div class="img-border">
-              <img src="postgres.png" alt="PostgreSQL logo" title="PostgreSQL" />
-            </div>
-            <div class="img-border">
-              <img src="typescript.svg" alt="TypeScript logo" title="TypeScript" />
-            </div>
-            <div class="img-border"><img src="python.png" alt="Python logo" title="Python" /></div>
-            <div class="img-border">
-              <img src="bootstrap.svg" alt="Bootstrap logo" title="Bootstrap" />
-            </div>
-            <div class="img-border"><img src="html.png" alt="HTML5 logo" title="HTML5" /></div>
-            <div class="img-border"><img src="css.png" alt="CSS3 logo" title="CSS3" /></div>
-            <div class="img-border"><img src="vercel.png" alt="Vercel logo" title="Vercel" /></div>
-            <div class="img-border"><img src="render.png" alt="Render logo" title="Render" /></div>
-            <div class="img-border">
-              <img src="supabase.png" alt="Supabase logo" title="Supabase" />
-            </div>
-            <div class="img-border"><img src="github.png" alt="GitHub logo" title="GitHub" /></div>
-            <div class="img-border"><img src="gitlab.png" alt="GitLab logo" title="GitLab" /></div>
-            <div class="img-border"><img src="gemini.svg" alt="Gemini logo" title="Gemini" /></div>
-          </div>
+        <!-- DESKTOP ONLY: hidden on mobile -->
+        <div class="tools-desktop">
+          <ng-container [ngTemplateOutlet]="toolsTpl" />
         </div>
 
         <div class="card music">
