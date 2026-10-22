@@ -1,1 +1,142 @@
 <app-pill></app-pill>
+
+<main class="page">
+  <header class="page-head">
+    <h1 class="rise" style="--i: 1">Let's talk.</h1>
+    <p class="lead rise" style="--i: 2">
+      Hiring, collaborating or just saying hi? Send me a message and I'll get back to you.
+    </p>
+  </header>
+
+  <div class="layout">
+    <!-- ============ LEFT: FORM ============ -->
+    <div class="card form-card rise" style="--i: 3">
+      <p class="card-title">Send a message</p>
+
+      <form (ngSubmit)="send(f)" #f="ngForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+              [(ngModel)]="model.name"
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@company.com"
+              required
+              email
+              [(ngModel)]="model.email"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="Frontend developer role at…"
+            [(ngModel)]="model.subject"
+          />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell me a bit about what you have in mind."
+            required
+            [(ngModel)]="model.message"
+          ></textarea>
+        </div>
+
+        @if (submitted() && f.invalid) {
+          <p class="error" role="alert">Please fill in your name, a valid email and a message.</p>
+        }
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="hint">Opens your email app with the message ready to send.</p>
+        </div>
+      </form>
+    </div>
+
+    <!-- ============ RIGHT: DIRECT LINKS ============ -->
+    <div class="side">
+      <div class="card rise" style="--i: 4">
+        <p class="status">
+          <span class="dot"></span>
+          Open to work · Kuching · Can relocate
+        </p>
+        <p class="body-text intro">
+          I'm looking for my first full-time developer role. Email is the fastest way to reach me.
+        </p>
+      </div>
+
+      <div class="card rise" style="--i: 5">
+        <p class="card-title">Find me elsewhere</p>
+        <ul class="links">
+          <li>
+            <a href="mailto:stevecalvincarnell@gmail.com">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 7 8 6 8-6" /></svg>
+              </span>
+              <span class="txt">
+                <span class="label">Email</span>
+                <span class="value">stevecalvincarnell&#64;gmail.com</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/steve-calvin-carnell" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" /><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2.5 2.5 0 0 1 5 0v3" /></svg>
+              </span>
+              <span class="txt">
+                <span class="label">LinkedIn</span>
+                <span class="value">steve-calvin-carnell</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/hydrobee" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14" /></svg>
+              </span>
+              <span class="txt">
+                <span class="label">GitHub</span>
+                <span class="value">hydrobee</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <div class="static">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+              </span>
+              <span class="txt">
+                <span class="label">Based in</span>
+                <span class="value">Kuching, Sarawak</span>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

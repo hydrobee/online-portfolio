@@ -1,0 +1,218 @@
+/* =====================================================================
+   CONTACT PAGE  (contact.css)
+   ===================================================================== */
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 84px) var(--gutter) 120px;
+}
+
+.page-head {
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.page-head h1 {
+  margin-top: 10px;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.lead {
+  max-width: 40ch;
+  margin-top: 16px;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--text-2);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ================= FORM ================= */
+.form-card {
+  padding: clamp(24px, 3.4vw, 40px);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--text);
+  font: 400 1rem/1.4 var(--font);
+  letter-spacing: -0.01em;
+  transition:
+    box-shadow 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.55;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-3);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  background: var(--surface);
+  box-shadow:
+    inset 0 0 0 1.5px var(--accent),
+    0 0 0 4px rgba(0, 113, 227, 0.14);
+}
+
+.error {
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #d70015;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-3);
+}
+
+/* ================= SIDE ================= */
+.intro {
+  margin-top: 16px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.links {
+  display: grid;
+  gap: 4px;
+  margin: 0 calc(var(--pad) * -0.4);
+  padding: 0;
+  list-style: none;
+}
+
+.links a,
+.links .static {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.25s var(--ease);
+}
+
+.links a:hover {
+  background: var(--fill);
+}
+
+.icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--fill);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+  color: var(--text);
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.links a:hover .icon {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* leave room for the bottom pill on phones */
+  .page {
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 520px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
