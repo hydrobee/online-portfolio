@@ -1,1 +1,71 @@
 <app-pill></app-pill>
+
+<main class="page">
+  <header class="page-head">
+    <h1 class="rise" style="--i: 1">Things I've built.</h1>
+    <p class="lead rise" style="--i: 2">
+      A mix of personal projects and the internal systems I built during my internship.
+    </p>
+
+    <div class="filters rise" style="--i: 3" role="group" aria-label="Filter projects">
+      @for (f of filters; track f.id) {
+        <button
+          type="button"
+          class="chip"
+          [class.on]="active() === f.id"
+          [attr.aria-pressed]="active() === f.id"
+          (click)="active.set(f.id)"
+        >
+          {{ f.label }}
+        </button>
+      }
+    </div>
+  </header>
+
+  <section class="grid rise" style="--i: 4">
+    @for (p of visible(); track p.title) {
+      <article class="card project">
+        <div class="logo-container">
+          <img [src]="p.logo" [alt]="p.logoAlt" class="logo-img logo" />
+          <img [src]="p.word" [alt]="p.wordAlt" class="logo-img word" />
+        </div>
+
+        <div class="body">
+          <div class="top">
+            <h2>{{ p.title }}</h2>
+            <span class="year">{{ p.year }}</span>
+          </div>
+          <p class="tagline">{{ p.tagline }}</p>
+          <p class="desc">{{ p.description }}</p>
+
+          <ul class="tags">
+            @for (t of p.tech; track t) {
+              <li>{{ t }}</li>
+            }
+          </ul>
+
+          @if (p.live || p.code) {
+            <div class="actions">
+              @if (p.live) {
+                <a class="btn btn-primary" [href]="p.live" target="_blank" rel="noopener">
+                  View project
+                </a>
+              }
+              @if (p.code) {
+                <a class="btn" [href]="p.code" target="_blank" rel="noopener">Code</a>
+              }
+            </div>
+          }
+        </div>
+      </article>
+    }
+
+    <!-- Coming soon banner -->
+    @if (active() !== 'internship') {
+      <div class="card coming">
+        <p class="eyebrow">In progress</p>
+        <p class="typewriter">Laravel project coming soon</p>
+      </div>
+    }
+  </section>
+</main>
