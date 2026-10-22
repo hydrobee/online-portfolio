@@ -1,23 +1,24 @@
-<head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk:wght@500;700&display=swap"
-    rel="stylesheet"
-  />
-</head>
-<body>
-  <app-pill></app-pill>
-  <div class="about">
-    <div class="left">
-      <div class="info">
-        <p class="card-title"><b>What I'm about.</b></p>
+<app-pill></app-pill>
 
-        <p class="subtitle">WHERE I'M FROM</p>
-        <p>
+<main class="page">
+  <header class="page-head">
+    <!-- <p class="eyebrow rise" style="--i: 0">About</p> -->
+    <h1 class="rise" style="--i: 1">What I'm about.</h1>
+  </header>
+
+  <div class="layout">
+    <!-- ============ LEFT: THE STORY ============ -->
+    <div class="card story rise" style="--i: 2">
+      <section class="block">
+        <p class="eyebrow">Where I'm from</p>
+        <p class="body-text">
           Sarawak, born and raised. I'm based in Kuching, and I want to build things people here
           actually use.
         </p>
+      </section>
 
-        <p class="subtitle">WHAT I USED TO DO</p>
+      <section class="block">
+        <p class="eyebrow">What I used to do</p>
         <ul class="list">
           <li>Studied <b>Software Engineering at UNIMAS</b> and made the Dean's List.</li>
           <li>Was a <b>Physics peer mentor</b> for 2 semesters at Labuan Matriculation College.</li>
@@ -27,40 +28,44 @@
             Space Challenge roadshows at <b>10+ schools</b>.
           </li>
         </ul>
+      </section>
 
-        <p class="subtitle">WHAT I DO NOW</p>
-        <p>
+      <section class="block">
+        <p class="eyebrow">What I do now</p>
+        <p class="body-text">
           Job hunting and still building. <b>CodeMark</b>, my AI code review tool, is live. I'm
           learning <b>Laravel</b> through a bug tracker, and GitHub Actions is next.
         </p>
+      </section>
 
-        <p class="subtitle">WHAT I'M LOOKING FOR</p>
-        <p>
+      <section class="block">
+        <p class="eyebrow">What I'm looking for</p>
+        <p class="body-text">
           My first full-time developer role. I like the whole web stack, from Angular to the API
           behind it, plus AI tools. Based in Kuching, open to relocating. Give me a team that ships
           real stuff and I'll learn fast.
         </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="assets/cv-placeholder.pdf" download>Download CV</a>
-          <a class="btn" href="https://github.com/hydrobee" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/steve-calvin-carnell"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn</a
-          >
-          <a class="btn" href="mailto:stevecalvincarnell@gmail.com">Contact me</a>
-        </div>
+      </section>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="assets/cv-placeholder.pdf" download>Download CV</a>
+        <a class="btn" href="https://github.com/hydrobee" target="_blank" rel="noopener">GitHub</a>
+        <a
+          class="btn"
+          href="https://www.linkedin.com/in/steve-calvin-carnell"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        <a class="btn" href="mailto:stevecalvincarnell@gmail.com">Contact me</a>
       </div>
     </div>
-    <div class="right">
-      <!-- Photo + status -->
-      <div class="info profile-card">
+
+    <!-- ============ RIGHT: PHOTO + JOURNEY ============ -->
+    <div class="side">
+      <div class="card profile-card rise" style="--i: 3">
         <div class="photo-wrap">
-          <img class="photo" src="about.jpg" alt="It's me" />
+          <img class="photo" src="about.jpg" alt="Portrait of Steve Calvin" />
           <span class="status">
             <span class="dot"></span>
             Open to work · Kuching · Can relocate
@@ -68,17 +73,16 @@
         </div>
       </div>
 
-      <!-- Timeline -->
-      <div class="info">
-        <p class="card-title"><b>My journey.</b></p>
+      <div class="card rise" style="--i: 4">
+        <p class="card-title">My journey</p>
         <ol class="timeline">
           <li>
-            <span class="year">2020 - 2022</span>
+            <span class="year">2020 – 2022</span>
             <p class="tl-title">Labuan Matriculation College</p>
             <p class="tl-desc">Module 1 Student (Life Science)</p>
           </li>
           <li>
-            <span class="year">2022 - 2026</span>
+            <span class="year">2022 – 2026</span>
             <p class="tl-title">UNIMAS</p>
             <p class="tl-desc">Bachelor of Software Engineering (Hons), 4 times Dean's List.</p>
           </li>
@@ -88,11 +92,10 @@
             <p class="tl-desc">2nd Runner-Up (State), Global Nominee.</p>
           </li>
           <li>
-            <span class="year">Mar - Aug 2025</span>
+            <span class="year">Mar – Aug 2025</span>
             <p class="tl-title">Internship at Sarawak Skills</p>
             <p class="tl-desc">Built 3 internal systems used by 300+ staff.</p>
           </li>
-
           <li>
             <span class="year">2026</span>
             <p class="tl-title">CodeMark</p>
@@ -107,4 +110,4 @@
       </div>
     </div>
   </div>
-</body>
+</main>

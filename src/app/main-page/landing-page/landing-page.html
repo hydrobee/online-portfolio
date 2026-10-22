@@ -1,285 +1,300 @@
-<head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk:wght@500;700&display=swap"
-    rel="stylesheet"
-  />
-</head>
-<body>
-  <app-pill></app-pill>
-  <div class="landing-page">
-    <div class="simple-about-left">
-      <div class="about">
-        <p class="name">Hi! I'm Steve Calvin</p>
-        <p>
-          a <b>Software Engineering Fresh Grad</b> from Kuching, Sarawak. <br />
-          <br />
-          I build web apps with Angular, FastAPI, PostgreSQL and integrated with favourite LLM.
-          <br /><br />I made an AI powered tool that helps lecturers grade code, and I built systems
-          used by 300+ staff. <br />
-          <br />
-          Looking for my first developer role. Let's build something together!
-        </p>
+<app-pill></app-pill>
+
+<main class="page">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <p class="status rise" style="--i: 0">
+      <span class="dot"></span>Open to work · Kuching · Can relocate
+    </p>
+    <h1 class="rise" style="--i: 1">Steve Calvin</h1>
+    <p class="lead rise" style="--i: 2">
+      Software Engineering graduate from Kuching, Sarawak. I build web apps with Angular, FastAPI
+      and AI.
+    </p>
+    <div class="cta rise" style="--i: 3">
+      <a class="btn btn-primary" href="#work">View my work</a>
+      <a class="btn" routerLink="/About">About me</a>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section id="work" class="section rise" style="--i: 4">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Things I've built</h2>
+    </div>
+
+    <div class="work-grid">
+      <article class="card project-card">
+        <div class="logo-container">
+          <!-- Default: logo -->
+          <img src="CodeMark Logo 1.png" alt="CodeMark logo" class="logo-img logo" />
+          <!-- Hover: wordmark -->
+          <img src="CodeMark Word.png" alt="CodeMark" class="logo-img word" />
+        </div>
+        <div class="project-meta">
+          <div>
+            <h3>CodeMark</h3>
+            <p>AI code review for lecturers</p>
+          </div>
+          <a
+            class="go"
+            href="https://your-project-link.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open CodeMark project"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="logo-container">
+          <img src="sarawak skills.png" alt="Sarawak Skills logo" class="logo-img logo" />
+          <img src="staff directory.png" alt="Staff Directory" class="logo-img word" />
+        </div>
+        <div class="project-meta">
+          <div>
+            <h3>Staff Directory</h3>
+            <p>Internship · Sarawak Skills</p>
+          </div>
+          <a
+            class="go"
+            href="https://your-project-link.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Staff Directory project"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="logo-container">
+          <img src="claim form.png" alt="Claim Form System logo" class="logo-img logo" />
+          <img src="internship project.png" alt="Claim Form System" class="logo-img word" />
+        </div>
+        <div class="project-meta">
+          <div>
+            <h3>Claim Form System</h3>
+            <p>Internship · Sarawak Skills</p>
+          </div>
+          <a
+            class="go"
+            href="https://your-project-link.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Claim Form System project"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="logo-container">
+          <img src="inventory.png" alt="Asset Inventory logo" class="logo-img logo" />
+          <img src="internship project.png" alt="Asset Inventory System" class="logo-img word" />
+        </div>
+        <div class="project-meta">
+          <div>
+            <h3>Asset Inventory</h3>
+            <p>Internship · Sarawak Skills</p>
+          </div>
+          <a
+            class="go"
+            href="https://your-project-link.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Asset Inventory project"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Coming soon banner -->
+      <div class="card coming">
+        <p class="eyebrow">In progress</p>
+        <p class="typewriter">Laravel project coming soon</p>
       </div>
-      <div class="picture">
-        <p class="card-title">Life Beyond Code</p>
-        <div class="frame-2" autoScroll [scrollSpeed]="0.5">
-          <div class="img-border-2">
-            <img
-              src="politeknik.jpg"
-              alt="Politeknik"
-              title="Sarawak Space Challenge Roadshow at Politeknik Kuching"
-            />
-          </div>
-          <div class="img-border-2">
-            <img src="iot.jpg" alt="Angular Framework Logo" title="Introduction to IoT" />
-          </div>
-          <div class="img-border-2">
-            <img
-              src="samarahan.jpg"
-              alt="Angular Framework Logo"
-              title="Sarawak Space Challenge Roadshow at SMK Kota Samarahan"
-            />
-          </div>
-          <div class="img-border-2">
-            <img
-              src="makeramai.jpg"
-              alt="Angular Framework Logo"
-              title="Hackathon with the gang 🚀"
-            />
-          </div>
-          <div class="img-border-2">
-            <img
-              src="runnerup.jpg"
-              alt="Angular Framework Logo"
-              title="Won 2nd runner up for NASA Space Apps Challenge 2024"
-            />
-          </div>
-          <div class="img-border-2">
-            <img
-              src="fcsit.jpg"
-              alt="Angular Framework Logo"
-              title="Volunteering for FYP Symposium"
-            />
-          </div>
-          <div class="img-border-2">
-            <img
-              src="java.jpg"
-              alt="Angular Framework Logo"
-              title="With my favourite lecturer <3"
-            />
+    </div>
+  </section>
+
+  <!-- ============ A BIT MORE ABOUT ME ============ -->
+  <section class="section rise" style="--i: 5">
+    <div class="section-head">
+      <p class="eyebrow">Beyond the resume</p>
+      <h2>A bit more about me</h2>
+    </div>
+
+    <div class="bento">
+      <div class="col">
+        <div class="card">
+          <p class="card-title">Hello there</p>
+          <p class="body-text">
+            I build web apps with <b>Angular</b>, <b>FastAPI</b>, <b>PostgreSQL</b> and my favourite
+            LLMs. I made an AI-powered tool that helps lecturers grade code, and I built systems
+            used by 300+ staff.
+          </p>
+          <p class="body-text">
+            Looking for my first developer role. Let's build something together!
+          </p>
+          <a class="text-link" routerLink="/About"
+            >More about me <span aria-hidden="true">→</span></a
+          >
+        </div>
+
+        <div class="card">
+          <p class="card-title">Life Beyond Code</p>
+          <div class="frame-2" autoScroll [scrollSpeed]="0.5">
+            <div class="img-border-2">
+              <img
+                src="politeknik.jpg"
+                alt="Roadshow at Politeknik Kuching"
+                title="Sarawak Space Challenge Roadshow at Politeknik Kuching"
+              />
+            </div>
+            <div class="img-border-2">
+              <img src="iot.jpg" alt="Introduction to IoT session" title="Introduction to IoT" />
+            </div>
+            <div class="img-border-2">
+              <img
+                src="samarahan.jpg"
+                alt="Roadshow at SMK Kota Samarahan"
+                title="Sarawak Space Challenge Roadshow at SMK Kota Samarahan"
+              />
+            </div>
+            <div class="img-border-2">
+              <img
+                src="makeramai.jpg"
+                alt="Hackathon with the team"
+                title="Hackathon with the gang 🚀"
+              />
+            </div>
+            <div class="img-border-2">
+              <img
+                src="runnerup.jpg"
+                alt="NASA Space Apps 2nd Runner-Up"
+                title="Won 2nd runner up for NASA Space Apps Challenge 2024"
+              />
+            </div>
+            <div class="img-border-2">
+              <img
+                src="fcsit.jpg"
+                alt="Volunteering at the FYP Symposium"
+                title="Volunteering for FYP Symposium"
+              />
+            </div>
+            <div class="img-border-2">
+              <img
+                src="java.jpg"
+                alt="With my favourite lecturer"
+                title="With my favourite lecturer <3"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-1">
-        <div class="project-card">
-          <div class="logo-container">
-            <!-- Default: Logo -->
-            <img src="CodeMark Logo 1.png" alt="CodeMark Logo" class="logo-img logo" />
 
-            <!-- Hover: Wordmark -->
-            <img src="CodeMark Word.png" alt="CodeMark" class="logo-img word" />
+      <div class="col">
+        <div class="card">
+          <p class="card-title">Tools &amp; Frameworks</p>
+          <div class="frame" autoScroll>
+            <div class="img-border">
+              <img src="angular.png" alt="Angular logo" title="Angular" />
+            </div>
+            <div class="img-border">
+              <img src="fastapi.png" alt="FastAPI logo" title="FastAPI" />
+            </div>
+            <div class="img-border">
+              <img src="postgres.png" alt="PostgreSQL logo" title="PostgreSQL" />
+            </div>
+            <div class="img-border">
+              <img src="typescript.svg" alt="TypeScript logo" title="TypeScript" />
+            </div>
+            <div class="img-border"><img src="python.png" alt="Python logo" title="Python" /></div>
+            <div class="img-border">
+              <img src="bootstrap.svg" alt="Bootstrap logo" title="Bootstrap" />
+            </div>
+            <div class="img-border"><img src="html.png" alt="HTML5 logo" title="HTML5" /></div>
+            <div class="img-border"><img src="css.png" alt="CSS3 logo" title="CSS3" /></div>
+            <div class="img-border"><img src="vercel.png" alt="Vercel logo" title="Vercel" /></div>
+            <div class="img-border"><img src="render.png" alt="Render logo" title="Render" /></div>
+            <div class="img-border">
+              <img src="supabase.png" alt="Supabase logo" title="Supabase" />
+            </div>
+            <div class="img-border"><img src="github.png" alt="GitHub logo" title="GitHub" /></div>
+            <div class="img-border"><img src="gitlab.png" alt="GitLab logo" title="GitLab" /></div>
+            <div class="img-border"><img src="gemini.svg" alt="Gemini logo" title="Gemini" /></div>
           </div>
-
-          <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open CodeMark project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="logo-container">
-            <!-- Default: Logo -->
-            <img src="sarawak skills.png" alt="CodeMark Logo" class="logo-img logo" />
-
-            <!-- Hover: Wordmark -->
-            <img src="staff directory.png" alt="CodeMark" class="logo-img word" />
-          </div>
-          <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open CodeMark project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="project-1">
-        <div class="project-card">
-          <div class="logo-container">
-            <!-- Default: Logo -->
-            <img src="claim form.png" alt="CodeMark Logo" class="logo-img logo" />
-
-            <!-- Hover: Wordmark -->
-            <img src="internship project.png" alt="CodeMark" class="logo-img word" />
-          </div>
-          <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open CodeMark project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a>
         </div>
 
-        <div class="project-card">
-          <div class="logo-container">
-            <!-- Default: Logo -->
-            <img src="inventory.png" alt="CodeMark Logo" class="logo-img logo" />
-
-            <!-- Hover: Wordmark -->
-            <img src="internship project.png" alt="CodeMark" class="logo-img word" />
-          </div>
-          <a
-            class="go"
-            href="https://your-project-link.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open CodeMark project"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M8 7h9v9" />
-            </svg>
-          </a>
+        <div class="card music">
+          <p class="card-title">What I'm Listening To</p>
+          <iframe
+            data-testid="embed-iframe"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXat64iiQuzjo?utm_source=generator&si=3221564c83ce42fd"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="My Spotify playlist"
+          ></iframe>
         </div>
       </div>
     </div>
-    <div class="simple-about-right">
-      <div class="tech-stacks">
-        <p class="card-title">Tools & Frameworks</p>
-        <div class="frame" autoScroll>
-          <div class="img-border">
-            <img src="angular.png" alt="Angular Framework Logo" title="Angular" />
-          </div>
-          <div class="img-border">
-            <img src="fastapi.png" alt="FastAPI Framework Logo" title="FastAPI" />
-          </div>
-          <div class="img-border">
-            <img src="postgres.png" alt="PostgreSQL Logo" title="PostgreSQL" />
-          </div>
-          <div class="img-border">
-            <img src="typescript.svg" alt="TypeScript Logo" title="TypeScript" />
-          </div>
-          <div class="img-border">
-            <img src="python.png" alt="Python Logo" title="Python" />
-          </div>
-          <div class="img-border">
-            <img src="bootstrap.svg" alt="Bootstrap Framework Logo" title="Bootstrap" />
-          </div>
-          <div class="img-border">
-            <img src="html.png" alt="HTML5 Logo" title="HTML5" />
-          </div>
-          <div class="img-border">
-            <img src="css.png" alt="CSS3 Logo" title="CSS3" />
-          </div>
-          <div class="img-border">
-            <img src="vercel.png" alt="Vercel Logo" title="Vercel" />
-          </div>
-          <div class="img-border">
-            <img src="render.png" alt="Render Logo" title="Render" />
-          </div>
-          <div class="img-border">
-            <img src="supabase.png" alt="Supabase Logo" title="Supabase" />
-          </div>
-          <div class="img-border">
-            <img src="github.png" alt="GitHub Logo" title="GitHub" />
-          </div>
-          <div class="img-border">
-            <img src="gitlab.png" alt="GitLab Logo" title="GitLab" />
-          </div>
-          <div class="img-border">
-            <img src="gemini.svg" alt="Gemini Logo" title="Gemini" />
-          </div>
-        </div>
-      </div>
-      <div class="music">
-        <p class="card-title">What I'm Listening To</p>
-        <iframe
-          data-testid="embed-iframe"
-          style="border-radius: 12px"
-          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXat64iiQuzjo?utm_source=generator&si=3221564c83ce42fd"
-          width="100%"
-          height="352"
-          frameBorder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </div>
-      <!-- <div class="project-2">
-        <div class="project-card-2">
-          <div class="logo-container">
-            <img src="CodeMark Logo 1.png" alt="CodeMark Logo" class="logo-img logo" />
-            <img src="CodeMark Word.png" alt="CodeMark" class="logo-img word" />
-          </div>
-        </div>
-      </div> -->
-      <div class="project-2">
-        <div class="project-card-2">
-          <p class="typewriter">Laravel project coming soon</p>
-        </div>
-      </div>
-      <!-- <div class="project-3">
-        <div class="project-card-3">
-          <p class="typewriter">Laravel project coming soon</p>
-        </div>
-        <div class="project-card-3">
-          <p class="typewriter">Laravel project coming soon</p>
-        </div>
-      </div> -->
-    </div>
-  </div>
-</body>
+  </section>
+</main>
