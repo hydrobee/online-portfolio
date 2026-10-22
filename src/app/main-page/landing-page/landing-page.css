@@ -82,6 +82,22 @@
   box-shadow: var(--shadow-2);
 }
 
+/* cover variant: image fills the whole tile */
+.logo-container.cover .logo-img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+
+/* subtle zoom on hover instead of fading out */
+.project-card:hover .logo-container.cover .logo {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
 /* the soft tile the logo sits in */
 .logo-container {
   position: relative;
@@ -299,8 +315,20 @@
   scrollbar-width: none;
   cursor: grab;
   user-select: none;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--pad), #000 calc(100% - var(--pad)), transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0, #000 var(--pad), #000 calc(100% - var(--pad)), transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--pad),
+    #000 calc(100% - var(--pad)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--pad),
+    #000 calc(100% - var(--pad)),
+    transparent 100%
+  );
 }
 
 .frame::-webkit-scrollbar,
