@@ -25,7 +25,7 @@
   <section class="grid rise" style="--i: 4">
     @for (p of visible(); track p.title) {
       <article class="card project">
-        <div class="logo-container">
+        <div class="logo-container" [class.cover]="p.cover">
           <img [src]="p.logo" [alt]="p.logoAlt" class="logo-img logo" />
           <img [src]="p.word" [alt]="p.wordAlt" class="logo-img word" />
         </div>
@@ -37,6 +37,7 @@
           </div>
           <p class="tagline">{{ p.tagline }}</p>
           <p class="desc">{{ p.description }}</p>
+          <p class="desc_2">{{ p.description_2 }}</p>
 
           <ul class="tags">
             @for (t of p.tech; track t) {
@@ -44,7 +45,7 @@
             }
           </ul>
 
-          @if (p.live || p.code) {
+          @if (p.live || p.code || p.trailer) {
             <div class="actions">
               @if (p.live) {
                 <a class="btn btn-primary" [href]="p.live" target="_blank" rel="noopener">
@@ -53,6 +54,11 @@
               }
               @if (p.code) {
                 <a class="btn" [href]="p.code" target="_blank" rel="noopener">Code</a>
+              }
+              @if (p.trailer) {
+                <a class="btn btn-primary" [href]="p.trailer" target="_blank" rel="noopener">
+                  Watch trailer
+                </a>
               }
             </div>
           }

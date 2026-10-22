@@ -1,12 +1,13 @@
 import { Component, computed, signal } from '@angular/core';
 import { Pill } from '../reusable/pill/pill';
 
-type Category = 'all' | 'personal' | 'internship';
+type Category = 'all' | 'personal' | 'internship' | 'hackathon';
 
 interface ProjectItem {
   title: string;
   tagline: string;
   description: string;
+  description_2?: string;
   category: Exclude<Category, 'all'>;
   year: string;
   tech: string[];
@@ -16,6 +17,8 @@ interface ProjectItem {
   wordAlt: string;
   live?: string;
   code?: string;
+  trailer?: string;
+  cover?: boolean;
 }
 
 @Component({
@@ -29,6 +32,7 @@ export class Project {
     { id: 'all', label: 'All' },
     { id: 'personal', label: 'Personal' },
     { id: 'internship', label: 'Internship' },
+    { id: 'hackathon', label: 'Hackathon' },
   ];
 
   active = signal<Category>('all');
@@ -53,7 +57,8 @@ export class Project {
     {
       title: 'Staff Directory',
       tagline: 'Internship · Sarawak Skills',
-      description: 'An internal directory where staff can look up colleagues and their contact details.',
+      description:
+        'An internal directory where staff can look up colleagues and their contact details.',
       category: 'internship',
       year: '2025',
       tech: ['Angular', 'API Integration'],
@@ -88,6 +93,21 @@ export class Project {
       word: 'internship project.png',
       wordAlt: 'Asset Inventory System',
       // live: 'https://your-project-link.com',
+    },
+    {
+      title: 'Space Cadets: Chronicles of Exoplanet Exploration',
+      tagline: 'Hackathon · NASA Space Apps Challenge 2024',
+      description: 'A space exploration game where players solve science puzzles, meet alien species, upgrade starships, and publish planetary discovery logs.',
+      description_2: 'This project won 2nd runner up for State Level and got Global Nominee status.',
+      category: 'hackathon',
+      year: '2024',
+      tech: ['Figma', 'Wireframing', 'Game Design', 'Frontend Development'],
+      logo: 'space-cover.png',
+      logoAlt: 'Asset Inventory logo',
+      cover: true,
+      word: 'internship project.png',
+      wordAlt: 'Space Cadets',
+      trailer: 'https://youtu.be/n57WA4FmmFE',
     },
   ];
 
