@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="JobMatch logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5a3c"/>
+      <stop offset="1" stop-color="#e3342f"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="28" fill="url(#g)"/>
+  <!-- briefcase -->
+  <path d="M46 38v-5a5 5 0 0 1 5-5h18a5 5 0 0 1 5 5v5" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="26" y="38" width="68" height="50" rx="9" fill="none" stroke="#fff" stroke-width="6"/>
+  <!-- match check -->
+  <path d="M45 63l10 10 20-21" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
