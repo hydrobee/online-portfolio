@@ -140,6 +140,79 @@
   clip-path: inset(0 0 0 0);
 }
 
+/* ---- hover sequence: logo -> big wordmark slides through -> project snapshot ---- */
+.shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.has-shot .word {
+  clip-path: none;
+  opacity: 0;
+  max-width: 78%;
+  max-height: 78%;
+}
+
+.has-shot:hover .logo,
+.has-shot:focus-within .logo {
+  animation: seq-logo 2.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.has-shot:hover .word,
+.has-shot:focus-within .word {
+  animation: seq-word 2.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.has-shot:hover .shot,
+.has-shot:focus-within .shot {
+  animation: seq-shot 2.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes seq-logo {
+  0%   { opacity: 1; transform: scale(1);    filter: blur(0); }
+  12%  { opacity: 1; transform: scale(1.12); filter: blur(0); }
+  26%  { opacity: 0; transform: scale(0.7);  filter: blur(8px); }
+  100% { opacity: 0; transform: scale(0.7);  filter: blur(8px); }
+}
+
+@keyframes seq-word {
+  0%, 16% { opacity: 0; transform: translateX(70%) scale(1.7); filter: blur(14px); }
+  34%     { opacity: 1; transform: translateX(0) scale(1.15);  filter: blur(0); }
+  58%     { opacity: 1; transform: translateX(-4%) scale(1);   filter: blur(0); }
+  76%     { opacity: 0; transform: translateX(-70%) scale(1.6); filter: blur(12px); }
+  100%    { opacity: 0; transform: translateX(-70%) scale(1.6); filter: blur(12px); }
+}
+
+@keyframes seq-shot {
+  0%, 66% { opacity: 0; transform: scale(1.1); filter: blur(10px); }
+  92%     { opacity: 1; transform: scale(1);   filter: blur(0); }
+  100%    { opacity: 1; transform: scale(1);   filter: blur(0); }
+}
+
+/* reduced motion: simple crossfade, logo -> snapshot */
+@media (prefers-reduced-motion: reduce) {
+  .has-shot:hover .logo,
+  .has-shot:hover .word,
+  .has-shot:hover .shot,
+  .has-shot:focus-within .logo,
+  .has-shot:focus-within .word,
+  .has-shot:focus-within .shot {
+    animation: none;
+    filter: none;
+    transform: none;
+  }
+  .has-shot:hover .logo,
+  .has-shot:focus-within .logo { opacity: 0; }
+  .has-shot:hover .shot,
+  .has-shot:focus-within .shot { opacity: 1; }
+  .shot { transition: opacity 0.4s ease; }
+}
+
 .project-meta {
   display: flex;
   align-items: flex-end;
