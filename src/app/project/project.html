@@ -24,10 +24,13 @@
 
   <section class="grid rise" style="--i: 4">
     @for (p of visible(); track p.title) {
-      <article class="card project">
+      <article class="card project" [class.has-shot]="!!p.shot">
         <div class="logo-container" [class.cover]="p.cover">
           <img [src]="p.logo" [alt]="p.logoAlt" class="logo-img logo" />
           <img [src]="p.word" [alt]="p.wordAlt" class="logo-img word" />
+          @if (p.shot) {
+            <img [src]="p.shot" [alt]="p.title + ' preview'" class="shot" />
+          }
         </div>
 
         <div class="body">
