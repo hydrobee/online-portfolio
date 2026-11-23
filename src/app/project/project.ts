@@ -40,6 +40,32 @@ export class Project {
   // TODO: edit the descriptions, tech and links so they match your real projects
   readonly projects: ProjectItem[] = [
     {
+      title: 'JobMatch',
+      tagline: 'Personal job-search assistant',
+      description:
+        'A Laravel app that collects job listings from RSS feeds every morning, scores each one against my skills, and emails me a daily digest of the best matches.',
+      description_2:
+        'It also tracks applications on a Saved → Offer board and uses Gemini to extract skills from postings and tailor my resume for each job, with an ATS checklist.',
+      category: 'personal',
+      year: '2026',
+      tech: [
+        'Laravel',
+        'PHP',
+        'PostgreSQL',
+        'Tailwind CSS',
+        'Alpine.js',
+        'Gemini API',
+        'Task Scheduling',
+        'PHPUnit',
+        'GitHub Actions',
+      ],
+      logo: 'jobmatch-logo.svg',
+      logoAlt: 'JobMatch logo',
+      word: 'jobmatch-word.svg',
+      wordAlt: 'JobMatch',
+      code: 'https://github.com/hydrobee/JobMatch',
+    },
+    {
       title: 'CodeMark',
       tagline: 'AI code review for lecturers',
       description:

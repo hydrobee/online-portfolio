@@ -7,6 +7,7 @@
     <div class="frame" autoScroll>
       <div class="img-border"><img src="angular.png" alt="Angular logo" title="Angular" /></div>
       <div class="img-border"><img src="fastapi.png" alt="FastAPI logo" title="FastAPI" /></div>
+      <div class="img-border"><img src="laravel.svg" alt="Laravel logo" title="Laravel" /></div>
       <div class="img-border">
         <img src="postgres.png" alt="PostgreSQL logo" title="PostgreSQL" />
       </div>
@@ -56,6 +57,32 @@
     </div>
 
     <div class="work-grid">
+      <article class="card project-card">
+        <div class="logo-container">
+          <img src="jobmatch-logo.svg" alt="JobMatch logo" class="logo-img logo" />
+          <img src="jobmatch-word.svg" alt="JobMatch" class="logo-img word" />
+        </div>
+        <div class="project-meta">
+          <div>
+            <h3>JobMatch</h3>
+            <p>Laravel job-search assistant</p>
+          </div>
+          <a
+            class="go"
+            href="https://github.com/hydrobee/JobMatch"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open JobMatch code on GitHub"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
       <article class="card project-card">
         <div class="logo-container">
           <img src="CodeMark Logo 1.png" alt="CodeMark logo" class="logo-img logo" />
@@ -160,15 +187,9 @@
           </a>
         </div>
       </article>
-
-      <!-- Coming soon banner -->
-      <div class="card coming">
-        <p class="eyebrow">In progress</p>
-        <p class="typewriter">Laravel project coming soon</p>
-      </div>
     </div>
 
-    <!-- MOBILE ONLY: Tools sits right below the Laravel banner -->
+    <!-- MOBILE ONLY: Tools sits right below the project grid -->
     <div class="tools-mobile">
       <ng-container [ngTemplateOutlet]="toolsTpl" />
     </div>
