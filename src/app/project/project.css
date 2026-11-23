@@ -147,9 +147,10 @@
   clip-path: inset(0 0 0 0);
 }
 
-/* touch screens have no hover, so show the wordmark's info another way: keep logo only */
+/* touch screens have no hover, so show the wordmark's info another way: keep logo only.
+   Cards with a snapshot keep the wordmark: it's the middle step of their tap sequence. */
 @media (hover: none) {
-  .word {
+  .project:not(.has-shot) .word {
     display: none;
   }
 }
