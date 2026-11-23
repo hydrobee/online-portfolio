@@ -19,6 +19,7 @@ interface ProjectItem {
   code?: string;
   trailer?: string;
   cover?: boolean;
+  shot?: string; // snapshot shown at the end of the hover animation
 }
 
 @Component({
@@ -63,6 +64,7 @@ export class Project {
       logoAlt: 'JobMatch logo',
       word: 'jobmatch-word.svg',
       wordAlt: 'JobMatch',
+      shot: 'jobmatch-shot.png',
       code: 'https://github.com/hydrobee/JobMatch',
     },
     {
