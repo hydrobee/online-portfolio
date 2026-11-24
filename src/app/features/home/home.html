@@ -1,0 +1,145 @@
+<!-- Tools card, defined ONCE and reused in two places below -->
+<ng-template #toolsTpl>
+  <div class="card tools">
+    <p class="card-title">Tools &amp; Frameworks</p>
+    <div class="frame" appAutoScroll>
+      @for (tool of tools; track tool.src) {
+        <div class="img-border"><img [src]="tool.src" [alt]="tool.alt" [title]="tool.title" /></div>
+      }
+    </div>
+  </div>
+</ng-template>
+
+<main class="page">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <p class="status rise" style="--i: 0"><span class="dot"></span>{{ profile.availability }}</p>
+    <h1 class="rise" style="--i: 1">{{ profile.name }}</h1>
+    <p class="lead rise" style="--i: 2">
+      Software Engineering graduate from Kuching, Sarawak. I build web apps with Angular, FastAPI
+      and AI.
+    </p>
+    <div class="cta rise" style="--i: 3">
+      <a class="btn btn-primary" href="#work">View my work</a>
+      <a class="btn" routerLink="/About">About me</a>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section id="work" class="section rise" style="--i: 4">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Things I've built</h2>
+    </div>
+
+    <div class="work-grid">
+      @for (p of projects; track p.id) {
+        <article class="card project-card" [class.has-shot]="!!p.shot">
+          <div class="logo-container" [class.cover]="p.cover">
+            <img [src]="p.logo.src" [alt]="p.logo.alt" class="logo-img logo" />
+            @if (!p.cover) {
+              <img [src]="p.wordmark.src" [alt]="p.wordmark.alt" class="logo-img word" />
+            }
+            @if (p.shot) {
+              <img [src]="p.shot.src" [alt]="p.shot.alt" class="shot" />
+            }
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>{{ p.title }}</h3>
+              <p>{{ p.summary ?? p.tagline }}</p>
+            </div>
+            @if (p.highlight; as link) {
+              <a
+                class="go"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener"
+                [attr.aria-label]="link.ariaLabel"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    <!-- MOBILE ONLY: Tools sits right below the project grid -->
+    <div class="tools-mobile">
+      <ng-container [ngTemplateOutlet]="toolsTpl" />
+    </div>
+  </section>
+
+  <!-- ============ A BIT MORE ABOUT ME ============ -->
+  <section class="section rise" style="--i: 5">
+    <div class="section-head">
+      <p class="eyebrow">Beyond the resume</p>
+      <h2>A bit more about me</h2>
+    </div>
+
+    <div class="bento">
+      <div class="col">
+        <div class="card">
+          <p class="card-title">Hello there</p>
+          <p class="body-text">
+            I build web apps with <b>Angular</b>, <b>FastAPI</b>, <b>PostgreSQL</b> and my favourite
+            LLMs. I made an AI-powered tool that helps lecturers grade code, and I built systems
+            used by 300+ staff.
+          </p>
+          <p class="body-text">
+            Looking for my first developer role. Let's build something together!
+          </p>
+          <a class="text-link" routerLink="/About"
+            >More about me <span aria-hidden="true">→</span></a
+          >
+        </div>
+
+        <div class="card">
+          <p class="card-title">Life Beyond Code</p>
+          <div class="frame-2" appAutoScroll [scrollSpeed]="0.5">
+            @for (photo of gallery; track photo.src) {
+              <div class="img-border-2">
+                <img [src]="photo.src" [alt]="photo.alt" [title]="photo.title" />
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <!-- DESKTOP ONLY: hidden on mobile -->
+        <div class="tools-desktop">
+          <ng-container [ngTemplateOutlet]="toolsTpl" />
+        </div>
+
+        <div class="card music">
+          <p class="card-title">What I'm Listening To</p>
+          <iframe
+            data-testid="embed-iframe"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXat64iiQuzjo?utm_source=generator&si=3221564c83ce42fd"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="My Spotify playlist"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,84 @@
+<main class="page">
+  <header class="page-head">
+    <!-- <p class="eyebrow rise" style="--i: 0">About</p> -->
+    <h1 class="rise" style="--i: 1">What I'm about.</h1>
+  </header>
+
+  <div class="layout">
+    <!-- ============ LEFT: THE STORY ============ -->
+    <div class="card story rise" style="--i: 2">
+      <section class="block">
+        <p class="eyebrow">Where I'm from</p>
+        <p class="body-text">
+          Sarawak, born and raised. I'm based in Kuching, and I want to build things people here
+          actually use.
+        </p>
+      </section>
+
+      <section class="block">
+        <p class="eyebrow">What I used to do</p>
+        <ul class="list">
+          <li>Studied <b>Software Engineering at UNIMAS</b> and made the Dean's List.</li>
+          <li>Was a <b>Physics peer mentor</b> for 2 semesters at Labuan Matriculation College.</li>
+          <li>Built <b>3 internal systems</b> during my internship, now used by 300+ staff.</li>
+          <li>
+            Won <b>2nd Runner-Up (State)</b> and <b>Global Nominee</b> at NASA Space Apps, then ran
+            Space Challenge roadshows at <b>10+ schools</b>.
+          </li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <p class="eyebrow">What I do now</p>
+        <p class="body-text">
+          Job hunting and still building. <b>CodeMark</b>, my AI code review tool, is live, and I
+          built <b>JobMatch</b>, a <b>Laravel</b> job-search assistant tested with GitHub Actions.
+        </p>
+      </section>
+
+      <section class="block">
+        <p class="eyebrow">What I'm looking for</p>
+        <p class="body-text">
+          My first full-time developer role. I like the whole web stack, from Angular to the API
+          behind it, plus AI tools. Based in Kuching, open to relocating. Give me a team that ships
+          real stuff and I'll learn fast.
+        </p>
+      </section>
+
+      <div class="actions">
+        <a class="btn btn-primary" [href]="profile.cvUrl" download>Download CV</a>
+        <a class="btn" [href]="profile.social.github.url" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" [href]="profile.social.linkedin.url" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+        <a class="btn" [href]="'mailto:' + profile.email">Contact me</a>
+      </div>
+    </div>
+
+    <!-- ============ RIGHT: PHOTO + JOURNEY ============ -->
+    <div class="side">
+      <div class="card profile-card rise" style="--i: 3">
+        <div class="photo-wrap">
+          <img class="photo" src="about.jpg" [alt]="'Portrait of ' + profile.name" />
+          <span class="status">
+            <span class="dot"></span>
+            {{ profile.availability }}
+          </span>
+        </div>
+      </div>
+
+      <div class="card rise" style="--i: 4">
+        <p class="card-title">My journey</p>
+        <ol class="timeline">
+          @for (entry of timeline; track $index) {
+            <li [class.now]="entry.current">
+              <span class="year">{{ entry.period }}</span>
+              <p class="tl-title">{{ entry.title }}</p>
+              <p class="tl-desc">{{ entry.description }}</p>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</main>
