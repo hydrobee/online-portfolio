@@ -1,0 +1,70 @@
+<main class="page">
+  <header class="page-head">
+    <h1 class="rise" style="--i: 1">Things I've built.</h1>
+    <p class="lead rise" style="--i: 2">
+      A mix of personal projects and the internal systems I built during my internship.
+    </p>
+
+    <div class="filters rise" style="--i: 3" role="group" aria-label="Filter projects">
+      @for (f of filters; track f.id) {
+        <button
+          type="button"
+          class="chip"
+          [class.on]="active() === f.id"
+          [attr.aria-pressed]="active() === f.id"
+          (click)="selectFilter(f.id)"
+        >
+          {{ f.label }}
+        </button>
+      }
+    </div>
+  </header>
+
+  <section class="grid rise" style="--i: 4">
+    @for (p of visible(); track p.id) {
+      <article class="card project" [class.has-shot]="!!p.shot">
+        <div class="logo-container" [class.cover]="p.cover">
+          <img [src]="p.logo.src" [alt]="p.logo.alt" class="logo-img logo" />
+          <img [src]="p.wordmark.src" [alt]="p.wordmark.alt" class="logo-img word" />
+          @if (p.shot; as shot) {
+            <img [src]="shot.src" [alt]="shot.alt" class="shot" />
+          }
+        </div>
+
+        <div class="body">
+          <div class="top">
+            <h2>{{ p.title }}</h2>
+            <span class="year">{{ p.year }}</span>
+          </div>
+          <p class="tagline">{{ p.tagline }}</p>
+          <p class="desc">{{ p.description }}</p>
+          <p class="desc_2">{{ p.details }}</p>
+
+          <ul class="tags">
+            @for (t of p.tech; track t) {
+              <li>{{ t }}</li>
+            }
+          </ul>
+
+          @if (p.links.live || p.links.code || p.links.trailer) {
+            <div class="actions">
+              @if (p.links.live; as live) {
+                <a class="btn btn-primary" [href]="live" target="_blank" rel="noopener">
+                  View project
+                </a>
+              }
+              @if (p.links.code; as code) {
+                <a class="btn" [href]="code" target="_blank" rel="noopener">Code</a>
+              }
+              @if (p.links.trailer; as trailer) {
+                <a class="btn btn-primary" [href]="trailer" target="_blank" rel="noopener">
+                  Watch trailer
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </article>
+    }
+  </section>
+</main>

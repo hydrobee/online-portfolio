@@ -1,13 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Footer } from './reusable/footer/footer';
+import { Footer } from './core/layout/footer/footer';
+import { Navbar } from './core/layout/navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer],
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly title = signal('online-portfolio');
-}
+export class App {}
